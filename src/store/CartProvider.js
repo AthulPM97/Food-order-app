@@ -8,7 +8,22 @@ const defaultCartState = {
 
 const cartReducer = (state, action) => {
   if (action.type === "ADD") {
-    const updatedItems = state.items.concat(action.item);
+    const existingCartItemIndex = state.items.findIndex((item) => item.id === action.item.id);
+    const existingCartItem = state.items[existingCartItemIndex];
+
+    let updatedItems
+
+    if(existingCartItem) {
+      const updatedItem = {
+        ...existingCartItem,
+        quantity: parseInt(existingCartItem.quantity) + parseInt(action.item.quantity)
+      };
+      updatedItems = [...state.items];
+      updatedItems[existingCartItemIndex] = updatedItem;
+    } else {
+      updatedItems = state.items.concat(action.item);
+    }
+
     const updatedTotalAmount =
       state.totalAmount + action.item.price * action.item.quantity;
     return {
@@ -26,11 +41,12 @@ const CartProvider = (props) => {
     cartReducer,
     defaultCartState
   );
-
+console.log(cartState);
   //const [items, setItems] = useState([]);
 
   const addItemToCart = (item) => {
     //setItems([...items, item]);
+    console.log(item);
     dispatchCartAction({ type: "ADD", item: item });
   };
 

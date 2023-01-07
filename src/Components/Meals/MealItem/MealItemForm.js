@@ -15,7 +15,7 @@ const MealItemForm = (props) => {
 
   const addMealHandler = (event) => {
     const order = {
-      id: Math.random().toString(),
+      id: props.itemInfo.name,
       name: props.itemInfo.name,
       price: props.itemInfo.price,
       quantity: userInputAmount
