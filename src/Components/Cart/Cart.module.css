@@ -1,4 +1,11 @@
-.cart-item{
+.cart-items {
+  list-style: none;
+  margin: auto;
+  padding: 0;
+  overflow: auto;
+}
+
+.cart-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -6,49 +13,67 @@
   padding: 1rem 0;
 }
 
-.cart-items {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    max-height: 20rem;
-    overflow: auto;
-  }
-  
-  .total {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-  }
-  
-  .actions {
-    text-align: right;
-  }
-  
-  .actions button {
-    font: inherit;
-    cursor: pointer;
-    background-color: transparent;
-    border: 1px solid #8a2b06;
-    padding: 0.5rem 2rem;
-    border-radius: 25px;
-    margin-left: 1rem;
-  }
-  
-  .actions button:hover,
-  .actions button:active {
-    background-color: #5a1a01;
-    border-color: #5a1a01;
-    color: white;
-  }
-  
-  .actions .button--alt {
-    color: #8a2b06;
-  }
-  
-  .actions .button {
-    background-color: #8a2b06;
-    color: white;
-  }
+.price {
+  margin-top: 0.25rem;
+  font-weight: bold;
+  color: #ad5502;
+  font-size: 1rem;
+}
+
+.item-name {
+  margin: 0 0 0.25rem 0;
+}
+
+.total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+}
+
+.badge {
+  display: inline-block;
+  min-width: 20px;
+  padding: 3px 7px;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 2;
+  color: rgb(17, 16, 16);
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: rgb(174, 167, 167);
+  border-radius: 5px;
+}
+
+.actions {
+  text-align: right;
+}
+
+.actions button {
+  font: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid #8a2b06;
+  padding: 0.5rem 2rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+}
+
+.actions button:hover,
+.actions button:active {
+  background-color: #5a1a01;
+  border-color: #5a1a01;
+  color: white;
+}
+
+.actions .button--alt {
+  color: #8a2b06;
+}
+
+.actions .button {
+  background-color: #8a2b06;
+  color: white;
+}

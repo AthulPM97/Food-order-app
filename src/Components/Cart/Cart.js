@@ -9,8 +9,13 @@ const Cart = (props) => {
   const cartItems = cartCtx.items.map((item) => {
     return (
       <li key={item.id} className={classes["cart-item"]}>
-        {item.name} <span> Qty: {item.quantity}</span>
-        price: {item.price}
+        <h3 className={classes["item-name"]}>{item.name}</h3>
+        <div className={classes.price}>${item.price}</div>
+        <span className={classes.badge}>x{item.quantity}</span>
+        <div className={classes.actions}>
+          <button className={classes["button--alt"]}>-</button>
+          <button className={classes.button}>+</button>
+        </div>
       </li>
     );
   });
