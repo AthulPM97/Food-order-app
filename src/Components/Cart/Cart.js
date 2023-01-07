@@ -5,7 +5,15 @@ import { useContext } from "react";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
-  console.log(cartCtx.items);
+
+  const addItemHandler = (item) => {
+    cartCtx.addItem({...item, quantity: 1});
+  }
+
+  const removeItemHandler = (id) => {
+    cartCtx.removeItem(id);
+  }
+    
   const cartItems = cartCtx.items.map((item) => {
     return (
       <li key={item.id} className={classes["cart-item"]}>
@@ -13,8 +21,8 @@ const Cart = (props) => {
         <div className={classes.price}>${item.price}</div>
         <span className={classes.badge}>x{item.quantity}</span>
         <div className={classes.actions}>
-          <button className={classes["button--alt"]}>-</button>
-          <button className={classes.button}>+</button>
+          <button className={classes["button--alt"]} onClick={removeItemHandler.bind(null, item.id)}>-</button>
+          <button className={classes.button} onClick={addItemHandler.bind(null, item)}>+</button>
         </div>
       </li>
     );

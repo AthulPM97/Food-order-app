@@ -13,7 +13,7 @@ const MealItemForm = (props) => {
     setUserInputAmount(input);
   }
 
-  const addMealHandler = (event) => {
+  const addMealHandler = () => {
     const order = {
       id: props.itemInfo.name,
       name: props.itemInfo.name,
